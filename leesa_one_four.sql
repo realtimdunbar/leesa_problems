@@ -1,5 +1,5 @@
-SELECT ProductID
-	, COUNT(ProductID) as count_sales
-	, LOG(COUNT(ProductID)) as log_count_sales
+SELECT SalesOrderID
+	, SUM(OrderQty) as total_order_quantity
+	, LOG(SUM(OrderQty)) as log_total_order_quantity
 FROM SalesLT.SalesOrderDetail
-GROUP BY ProductID;
+GROUP BY SalesOrderID;
